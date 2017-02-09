@@ -24,6 +24,7 @@ alias open="reattach-to-user-namespace open"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 export SVN_EDITOR="vim"
+export EDITOR="vim"
 
 # python
 export PIP_REQUIRE_VIRTUALENV=true
