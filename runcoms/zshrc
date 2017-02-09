@@ -11,3 +11,19 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# nvm
+export NVM_DIR="/Users/joshuaz/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Alias
+alias subl="reattach-to-user-namespace subl"
+alias open="reattach-to-user-namespace open"
+
+# Autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+export SVN_EDITOR="vim"
+
+# python
+export PIP_REQUIRE_VIRTUALENV=true
