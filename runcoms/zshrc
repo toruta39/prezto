@@ -19,6 +19,10 @@ export NVM_DIR="${ZDOTDIR:-$HOME}/.nvm"
 export SVN_EDITOR="subl -w"
 export EDITOR="subl -w"
 
+# go
+export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
+
 # python
 export PIP_REQUIRE_VIRTUALENV=true
 
@@ -33,3 +37,14 @@ if [ -f "$HOME/workspace/lib/google-cloud-sdk/path.zsh.inc" ]; then source "$HOM
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/workspace/lib/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/workspace/lib/google-cloud-sdk/completion.zsh.inc"; fi
 
+# rbenv
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+ulimit -n 1200
+
+# alias for tmux
+alias subl='reattach-to-user-namespace subl'
+
+# integrate iterm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
