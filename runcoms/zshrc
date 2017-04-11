@@ -13,11 +13,11 @@ fi
 # Customize to your needs...
 
 # nvm
-export NVM_DIR="/Users/joshuaz/.nvm"
+export NVM_DIR="${ZDOTDIR:-$HOME}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export SVN_EDITOR="vi"
-export EDITOR="vi"
+export SVN_EDITOR="subl -w"
+export EDITOR="subl -w"
 
 # python
 export PIP_REQUIRE_VIRTUALENV=true
@@ -26,3 +26,10 @@ export PIP_REQUIRE_VIRTUALENV=true
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/workspace/lib/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/workspace/lib/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/workspace/lib/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/workspace/lib/google-cloud-sdk/completion.zsh.inc"; fi
+
