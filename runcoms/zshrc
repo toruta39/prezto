@@ -25,6 +25,7 @@ export PATH="$PATH:$GOPATH/bin"
 
 # python
 export PIP_REQUIRE_VIRTUALENV=true
+alias pyenv="source ${HOME}/pyenv/bin/activate"
 
 # android sdk
 export ANDROID_HOME=${HOME}/Library/Android/sdk
@@ -41,6 +42,10 @@ if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.i
 
 # The next line enables shell command completion for gcloud.
 if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
+
+# google_appengine
+export PYTHONPATH=${PYTHONPATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine
+export PATH=${PATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine
 
 # rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
