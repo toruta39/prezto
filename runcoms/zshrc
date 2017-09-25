@@ -17,10 +17,12 @@ fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  . "/usr/local/opt/nvm/nvm.sh"
+fi
 
-export SVN_EDITOR="subl -w"
-export EDITOR="subl -w"
+export SVN_EDITOR="vi"
+export EDITOR="vi"
 
 # go
 export GOPATH="$HOME/go"
@@ -29,7 +31,9 @@ export PATH="$PATH:$GOPATH/bin"
 # python
 # export PIP_REQUIRE_VIRTUALENV=true
 alias pyenv="source ${HOME}/pyenv/bin/activate"
-alias pip="pip2"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias pip="pip2"
+fi
 
 # android sdk
 export ANDROID_HOME=${HOME}/Library/Android/sdk
@@ -62,10 +66,12 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 ulimit -n 1200
 
 # alias for tmux
-alias subl='reattach-to-user-namespace subl'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias subl='reattach-to-user-namespace subl'
+fi
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # alias for hub
-alias git='hub'
+alias h='hub'
