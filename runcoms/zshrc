@@ -63,6 +63,7 @@ ulimit -n 1200
 
 # alias for tmux
 alias subl='reattach-to-user-namespace subl'
+alias code='reattach-to-user-namespace code'
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
