@@ -21,8 +21,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   . "/usr/local/opt/nvm/nvm.sh"
 fi
 
-export SVN_EDITOR="vi"
-export EDITOR="vi"
+export SVN_EDITOR="vim"
+export EDITOR="vim"
+export VISUAL="vim"
 
 # go
 export GOPATH="$HOME/go"
@@ -60,8 +61,7 @@ if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
 export PATH=${PATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
 
 # rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
 
 ulimit -n 1200
 
@@ -71,8 +71,41 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias code='reattach-to-user-namespace code'
 fi
 
+alias vi='vim'
+
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # alias for hub
 alias h='hub'
+
+# bind ssh-agent for tmux
+if [ -z "$TMUX" ]; then
+	# we're not in a tmux session
+
+	if [ ! -z "$SSH_TTY" ]; then
+		# We logged in via SSH
+
+		# if ssh auth variable is missing
+		if [ -z "$SSH_AUTH_SOCK" ]; then
+			export SSH_AUTH_SOCK="$HOME/.ssh/.auth_socket"
+		fi
+
+		# if socket is available create the new auth session
+		if [ ! -S "$SSH_AUTH_SOCK" ]; then
+			`ssh-agent -a $SSH_AUTH_SOCK` > /dev/null 2>&1
+			echo $SSH_AGENT_PID > $HOME/.ssh/.auth_pid
+		fi
+
+		# if agent isn't defined, recreate it from pid file
+		if [ -z $SSH_AGENT_PID ]; then
+			export SSH_AGENT_PID=`cat $HOME/.ssh/.auth_pid`
+		fi
+
+		# Add all default keys to ssh auth
+		ssh-add 2>/dev/null
+
+		# start tmux
+		tmux attach
+	fi
+fi
