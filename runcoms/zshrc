@@ -30,8 +30,7 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 # python
-# export PIP_REQUIRE_VIRTUALENV=true
-alias pyenv="source ${HOME}/pyenv/bin/activate"
+export PATH="$PATH:$HOME/.local/bin"
 if [[ "$OSTYPE" == "darwin"* ]]; then
   alias pip="pip2"
 fi
@@ -61,7 +60,7 @@ if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
 export PATH=${PATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 ulimit -n 1200
 
