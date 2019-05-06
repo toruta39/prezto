@@ -27,7 +27,9 @@ export VISUAL="vim"
 
 # go
 export GOPATH="$HOME/go"
-export GOROOT="$(brew --prefix golang)/libexec"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export GOROOT="$(brew --prefix golang)/libexec"
+fi
 export PATH="$PATH:$GOPATH/bin"
 
 # python
