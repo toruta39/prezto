@@ -50,11 +50,16 @@ export PATH=${PATH}:${JAVA_HOME}/bin
 # custom
 export PATH=${PATH}:${HOME}/bin
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
+# gcloud
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"; fi
+  # The next line enables shell command completion for gcloud.
+  if [ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"; fi
+else
+  if [ -f '/home/ec2-user/google-cloud-sdk/path.zsh.inc' ]; then . '/home/ec2-user/google-cloud-sdk/path.zsh.inc'; fi
+  if [ -f '/home/ec2-user/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/ec2-user/google-cloud-sdk/completion.zsh.inc'; fi
+fi
 
 # google_appengine
 # export PYTHONPATH=${PYTHONPATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine
@@ -110,3 +115,4 @@ fi
 # locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
