@@ -91,6 +91,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # alias for hub
 alias h='hub'
 
+# alias for terraform
+alias tf='terraform'
+
 # bind ssh-agent for tmux
 if [ -z "$TMUX" ]; then
 	# we're not in a tmux session
@@ -126,5 +129,5 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
