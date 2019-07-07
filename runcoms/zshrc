@@ -15,8 +15,10 @@ fi
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# npm
-export NPM_TOKEN=""
+# linuxbrew
+if [[ "$OSTYPE" == "linux"* ]]; then
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
