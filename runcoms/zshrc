@@ -83,6 +83,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 alias vi='vim'
+alias v='nvim'
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
