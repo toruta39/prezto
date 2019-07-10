@@ -84,6 +84,7 @@ fi
 
 alias vi='vim'
 alias v='nvim'
+alias dc='docker-compose'
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
