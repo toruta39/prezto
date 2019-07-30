@@ -88,12 +88,17 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 alias vi='vim'
+alias v='nvim'
+alias dc='docker-compose'
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # alias for hub
 alias h='hub'
+
+# alias for terraform
+alias tf='terraform'
 
 # bind ssh-agent for tmux
 if [ -z "$TMUX" ]; then
@@ -130,5 +135,5 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
