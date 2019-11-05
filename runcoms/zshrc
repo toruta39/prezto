@@ -136,3 +136,9 @@ export LANG=en_US.UTF-8
 # asdf
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+# wsl docker
+if [ ! -z $WSL_DISTRO_NAME ]; then
+  export DOCKER_HOST="tcp://localhost:2375"
+fi
+
