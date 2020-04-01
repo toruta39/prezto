@@ -36,6 +36,16 @@ export PATH="$PATH:$GOPATH/bin"
 # python
 export PATH="$PATH:$HOME/.local/bin"
 
+# gettext
+export PATH="$PATH:/usr/local/Cellar/gettext/0.20.1/bin"
+
+# libicu
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig"
+
 # android sdk
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
@@ -53,6 +63,10 @@ export PATH=${PATH}:${JAVA_HOME}/bin
 # custom
 export PATH=${PATH}:${HOME}/bin
 
+# asdf
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 # gcloud
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # The next line updates PATH for the Google Cloud SDK.
@@ -67,6 +81,7 @@ fi
 # google_appengine
 # export PYTHONPATH=${PYTHONPATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/google_appengine
 export PATH=${PATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin
+export CLOUDSDK_PYTHON=$(which python3)
 
 # mojave patch
 export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/Cellar/libffi/3.2.1/lib/pkgconfig
@@ -79,7 +94,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias code='reattach-to-user-namespace code'
 fi
 
-alias vi='vim'
+alias vi='nvim'
 alias v='nvim'
 alias dc='docker-compose'
 
@@ -130,12 +145,7 @@ export LANG=en_US.UTF-8
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
 # wsl docker
 if [ ! -z $WSL_DISTRO_NAME ]; then
   export DOCKER_HOST="tcp://localhost:2375"
 fi
-
