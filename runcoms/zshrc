@@ -25,9 +25,9 @@ if [[ "$OSTYPE" == "linux"* ]]; then
   export PATH="$PATH:/snap/bin"
 fi
 
-export SVN_EDITOR="vim"
-export EDITOR="vim"
-export VISUAL="vim"
+export SVN_EDITOR="nvim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # go
 export GOPATH="$HOME/go"
@@ -79,7 +79,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias code='reattach-to-user-namespace code'
 fi
 
-alias vi='vim'
+alias vi='nvim'
 alias v='nvim'
 alias dc='docker-compose'
 
