@@ -26,6 +26,7 @@ if [[ "$OSTYPE" == "linux"* ]]; then
 fi
 
 export SVN_EDITOR="nvim"
+export GIT_EDITOR="nvim"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
