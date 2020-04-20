@@ -95,18 +95,15 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   alias code='reattach-to-user-namespace code'
 fi
 
-alias vi='nvim'
-alias v='nvim'
+# alias
+alias c='clear'
 alias dc='docker-compose'
+alias h='hub'
+alias tf='terraform'
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# alias for hub
-alias h='hub'
-
-# alias for terraform
-alias tf='terraform'
 
 # bind ssh-agent for tmux
 if [ -z "$TMUX" ]; then
