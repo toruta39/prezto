@@ -147,3 +147,6 @@ export LANG=en_US.UTF-8
 if [ ! -z $WSL_DISTRO_NAME ]; then
   export DOCKER_HOST="tcp://localhost:2375"
 fi
+
+# direnv
+eval "$(direnv hook zsh)"
