@@ -37,6 +37,9 @@ export PATH="$PATH:$GOPATH/bin"
 # python
 export PATH="$PATH:$HOME/.local/bin"
 
+# clang
+export PATH="$PATH:/usr/local/opt/llvm/bin"
+
 # gettext
 export PATH="$PATH:/usr/local/Cellar/gettext/0.20.1/bin"
 
@@ -151,3 +154,6 @@ fi
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# gh
+eval "$(gh completion -s zsh)"
