@@ -92,17 +92,18 @@ export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:/usr/local/Cellar/libffi/3.2.1/lib/pkg
 
 ulimit -n 1200
 
-# alias for tmux
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  alias subl='reattach-to-user-namespace subl'
-  alias code='reattach-to-user-namespace code'
-fi
+# # alias for tmux
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+#   alias subl='reattach-to-user-namespace subl'
+#   alias code='reattach-to-user-namespace code'
+# fi
 
 # alias
 alias c='clear'
 alias dc='docker-compose'
 alias h='hub'
 alias tf='terraform'
+alias rakutun='ssh -D 8888 -C2qTnN rk10'
 
 # integrate iterm2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
