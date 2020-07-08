@@ -157,3 +157,8 @@ eval "$(direnv hook zsh)"
 
 # gh
 eval "$(gh completion -s zsh)"
+
+# conda
+if [ -f "${HOME}/anaconda3/etc/profile.d/conda.sh" ]; then
+  source "${HOME}/anaconda3/etc/profile.d/conda.sh"
+fi
