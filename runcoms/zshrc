@@ -30,12 +30,18 @@ export GIT_EDITOR="nvim"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# asdf
+. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
+# this makes python works under `sudo -E su`
+export ASDF_DATA_DIR=$ASDF_DIR
+
 # go
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 # python
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/Library/Python/3.7/bin"
 
 # clang
 export PATH="$PATH:/usr/local/opt/llvm/bin"
@@ -66,10 +72,6 @@ export PATH=${PATH}:${JAVA_HOME}/bin
 
 # custom
 export PATH=${PATH}:${HOME}/bin
-
-# asdf
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
 
 # gcloud
 if [[ "$OSTYPE" == "darwin"* ]]; then
